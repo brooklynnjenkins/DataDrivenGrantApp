@@ -1,8 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import Table from "./Table.js"
+import { useEffect, useState } from "react";
 
 function App() {
-  return (
+  const [grants, setgrant] = useState([{title: "", institution: ""}]);
+  useEffect(() => {
+    async function fetchGrant() 
+    {
+      const url = "/NEH2020sGrant_Short.json";
+      const response = await fetch(url);
+      if (response.ok)
+        {
+          const result = await response.json();
+          console.log(result.Grants.Grant)
+          setgrant(result.Grants.Grant)
+        }
+      }
+    fetchGrant()
+    }, [])
+
+  return ( <>
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -17,8 +35,10 @@ function App() {
         >
           Learn React
         </a>
+        <Table grants={grants}/>
       </header>
     </div>
+    </>
   );
 }
 
