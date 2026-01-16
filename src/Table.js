@@ -4,7 +4,7 @@ function Table(props)
     return(
         <table>
             <tbody>
-               <TableRow grant={props.grants[0]}/>
+               {props.grants.map(grant => <TableRow key={grant["@AppNumber"]} grant={grant}/>)}
             </tbody>
         </table>
     );

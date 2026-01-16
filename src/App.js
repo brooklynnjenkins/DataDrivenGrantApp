@@ -4,7 +4,7 @@ import Table from "./Table.js"
 import { useEffect, useState } from "react";
 
 function App() {
-  const [grants, setgrant] = useState([{title: "", institution: ""}]);
+  const [grants, setgrants] = useState([{title: "", institution: ""}]);
   useEffect(() => {
     async function fetchGrant() 
     {
@@ -14,7 +14,7 @@ function App() {
         {
           const result = await response.json();
           console.log(result.Grants.Grant)
-          setgrant(result.Grants.Grant)
+          setgrants(result.Grants.Grant)
         }
       }
     fetchGrant()
@@ -35,7 +35,7 @@ function App() {
         >
           Learn React
         </a>
-        <Table grants={grants}/>
+        <Table grants={grants} />
       </header>
     </div>
     </>
