@@ -1,0 +1,24 @@
+
+table *{
+    padding: 15px;
+
+}
+tbody{
+    background-color: rgb(229, 245, 255);
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(0, 10, 24);
+}
+th{
+    background-color:rgb(122, 180, 255);
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(0, 17, 39);
+
+    border: 1px solid rgb(1, 11, 24);
+    position: sticky;
+    top: 0px;
+
+}
+td{
+    border-radius: 10px;
+    border: 1px solid rgb(0, 15, 34);
+}
