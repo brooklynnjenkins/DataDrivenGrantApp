@@ -5,8 +5,7 @@ function ParticipantList({ Participants }) {
         <ul>
             {Participants && Participants.length > 0 ? (
                         Participants.map((Participant,index) => (
-                            <li key ={index}>
-                                {Participant.Firstname} {Participant.Lastname} </li>
+                            <li key ={index}>{Participant.Firstname} {Participant.Lastname} </li>
                         ))
                 ) : (
                     <span>N/A</span>
