@@ -1,24 +1,23 @@
 
 table *{
-    padding: 15px;
-
+    font-family: 'Times New Roman', Times, serif;
 }
 tbody{
-    background-color: rgb(229, 245, 255);
-    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(255, 255, 255);
     color: rgb(0, 10, 24);
 }
 th{
-    background-color:rgb(122, 180, 255);
-    font-family: 'Times New Roman', Times, serif;
+    background-color:rgb(221, 235, 195);
     color: rgb(0, 17, 39);
-
-    border: 1px solid rgb(1, 11, 24);
     position: sticky;
     top: 0px;
-
 }
-td{
-    border-radius: 10px;
-    border: 1px solid rgb(0, 15, 34);
+
+tr:nth-child(even){
+    background-color: rgb(228, 228, 228);
+}
+th,td{
+    text-align: left;
+    border: 1px solid rgb(46, 46, 46);
+    padding: 15px;
 }

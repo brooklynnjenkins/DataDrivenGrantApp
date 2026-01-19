@@ -4,7 +4,9 @@ import Table from "./Table.js"
 import { useEffect, useState } from "react";
 
 function App() {
-  const [grants, setgrants] = useState([{ProjectTitle: "", Institution: ""}]);
+  const [grants, setGrants] = useState([{}]);
+
+
   useEffect(() => {
     async function fetchGrant() 
     {
@@ -14,7 +16,7 @@ function App() {
         {
           const result = await response.json();
           console.log(result.Grants.Grant)
-          setgrants(result.Grants.Grant)
+          setGrants(result.Grants.Grant)
         }
       }
     fetchGrant()

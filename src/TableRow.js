@@ -1,3 +1,5 @@
+import ParticipantList from './ParticipantList'
+
 function TableRow(props)
 {
     return( <>
@@ -7,8 +9,9 @@ function TableRow(props)
             <td>{props.grant.Program}</td>
             <td>{props.grant.PrimaryDiscipline}</td>
             <td>
-
+                <ParticipantList Participants={props.grant.Participant}/>
             </td>
+            <td>{props.grant.OrganizationType}</td>
             <td>{props.grant.Institution}</td>
             <td>{props.grant.InstState}</td>
             <td>{props.grant.YearAwarded}</td>
@@ -18,5 +21,3 @@ function TableRow(props)
 }
 
 export default TableRow
-
-//<td>{props.grant.Participant}</td>
