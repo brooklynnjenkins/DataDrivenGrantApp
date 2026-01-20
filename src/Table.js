@@ -10,7 +10,7 @@ function Table(props)
             <thead>
                 <tr>
                     <th>
-                        Project Title
+                        Project Title 
                     </th>
                     <th>
                         Program
@@ -20,9 +20,6 @@ function Table(props)
                     </th>
                     <th>
                         Participant(s)
-                    </th>
-                    <th>
-                        Amount of Participant(s)
                     </th>
                     <th>
                         Organization Type 
@@ -38,7 +35,7 @@ function Table(props)
                     </th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="allInfo">
                {props.grantsCopy.map(grant => <TableRow key={grant["@AppNumber"]} grant={grant}/>)}
             </tbody>
         </table>

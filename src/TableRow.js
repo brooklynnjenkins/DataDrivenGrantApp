@@ -21,7 +21,6 @@ function TableRow(props)
             <td>
                 {Participant(props.grant)}
             </td>
-            <td>{props.grant.ParticipantCount}</td>
             <td>{props.grant.OrganizationType}</td>
             <td>{props.grant.Institution}</td>
             <td>{props.grant.InstState}</td>
