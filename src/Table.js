@@ -4,7 +4,19 @@ import { useEffect, useState } from "react";
 
 function Table(props)
 {
-    const [grantsCopy, setgrantsCopy] = useState(props.grants);
+    const [grants, setGrants] = useState([{}]);
+    const [grantsCopy, setGrantsCopy] = useState(grants);
+    const [index, setIndex] = useState(0);
+    function discOrd(){
+        if(index%2==0){
+            props.setGrantsCopy(props.grantsCopy.sort((a,b) => a.PrimaryDiscipline.localeCompare(b.PrimaryDiscipline)));
+            setIndex(index + 1);
+        }
+        else{
+            props.setGrantsCopy(props.grantsCopy.sort((a,b) => b.PrimaryDiscipline.localeCompare(a.PrimaryDiscipline)));
+            setIndex(index + 1);
+            }   
+}
     return(
         <table>
             <thead>
@@ -15,8 +27,8 @@ function Table(props)
                     <th>
                         Program
                     </th>
-                    <th>
-                        Primary Discipline
+                    <th onClick = {discOrd}>
+                        Primary Discipline ▲▼
                     </th>
                     <th>
                         Participant(s)

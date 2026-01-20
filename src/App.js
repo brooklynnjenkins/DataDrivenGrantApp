@@ -38,13 +38,11 @@ function desYears(){
     let copy = [...grants];
     copy.sort((a,b) => b.YearAwarded - a.YearAwarded)
     setGrantsCopy(copy)
-    console.log(grants.sort((a,b) => b.YearAwarded - a.YearAwarded))
 }
 function ascYears(){
     let copy = [...grants];
     copy.sort((a,b) => a.YearAwarded - b.YearAwarded)
     setGrantsCopy(copy)
-    console.log(grants.sort((a,b) => a.YearAwarded - b.YearAwarded));
 }
 function ascOrd(){
   let copy =[...grants];
@@ -56,13 +54,6 @@ function desOrd(){
   copy.sort((a,b) => b.ProjectTitle.localeCompare(a.ProjectTitle));
   setGrantsCopy(copy)
 }
-function ordPT(){
-
-}
-function orgType(event){
-
-}
-
   return ( <>
     <div className="App">
         <div>

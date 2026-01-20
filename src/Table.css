@@ -18,8 +18,8 @@ tr:nth-child(even){
 }
 th,td{
     text-align: left;
-    border: 1px solid rgb(46, 46, 46);
     padding: 15px;
+   ;
 }
 div{
     color: rgb(0, 0, 0);
@@ -30,4 +30,9 @@ button{
     background-color: rgb(221, 235, 195);
     height: 25px;
     border-radius: 10px;
+    border: 1px solid rgb(124, 141, 92);
+}
+table{
+    width: 100%;
+    background-color: rgb(124, 141, 92);
 }
