@@ -1,18 +1,10 @@
 import React from 'react';
 
-function ParticipantList({ Participants }) {
+function ParticipantList(props){
     return(
-        <ul>
-            {Participants && Participants.length > 0 ? (
-                        Participants.map((Participant,index) => (
-                            <li key ={index}>{Participant.Firstname} {Participant.Lastname} </li>
-                        ))
-                ) : (
-                    <span>N/A</span>
+        <li>{props.participant.Firstname} {props.participant.Lastname}</li>
+    );
 
-                )}
-        </ul>
-    )
 }
 
 export default ParticipantList

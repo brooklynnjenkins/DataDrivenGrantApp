@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [grants, setGrants] = useState([{}]);
-
+  const [grantsCopy, setGrantsCopy] = useState(grants);
 
   useEffect(() => {
     async function fetchGrant() 
@@ -17,6 +17,7 @@ function App() {
           const result = await response.json();
           console.log(result.Grants.Grant)
           setGrants(result.Grants.Grant)
+          setGrantsCopy(result.Grants.Grant)
         }
       }
     fetchGrant()
@@ -24,9 +25,13 @@ function App() {
 
   return ( <>
     <div className="App">
-      <header className="App-header">
-        <Table grants={grants} />
-      </header>
+        <div>
+            <h1>List of Grants</h1>
+            <p>
+             
+            </p>
+        </div>
+        <Table grants={grants} setGrantsCopy={setGrantsCopy} grantsCopy={grantsCopy} />
     </div>
     </>
   );

@@ -1,14 +1,12 @@
 import TableRow from './TableRow.js'
 import "./Table.css";
+import { useEffect, useState } from "react";
+
 function Table(props)
 {
+    const [grantsCopy, setgrantsCopy] = useState(props.grants);
     return(
         <table>
-            <thead>
-                <tr>
-
-                </tr>
-            </thead>
             <thead>
                 <tr>
                     <th>
@@ -22,6 +20,9 @@ function Table(props)
                     </th>
                     <th>
                         Participant(s)
+                    </th>
+                    <th>
+                        Amount of Participant(s)
                     </th>
                     <th>
                         Organization Type 
@@ -38,7 +39,7 @@ function Table(props)
                 </tr>
             </thead>
             <tbody>
-               {props.grants.map(grant => <TableRow key={grant["@AppNumber"]} grant={grant}/>)}
+               {props.grantsCopy.map(grant => <TableRow key={grant["@AppNumber"]} grant={grant}/>)}
             </tbody>
         </table>
     );

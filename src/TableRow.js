@@ -2,15 +2,26 @@ import ParticipantList from './ParticipantList'
 
 function TableRow(props)
 {
+    function Participant(grant){
+        if(!(grant.Participant)){
+            return "N/A";
+        }
+        else if(grant.Participant instanceof Array){
+            return<ul>{props.grant.Participant.map(participant => <ParticipantList participant={participant}/>)}</ul>
+        }
+        else{
+            return<p>{grant.Participant.Firstname} {grant.Participant.Lastname}</p>
+        }
+    }
     return( <>
-
         <tr>
             <td>{props.grant.ProjectTitle}</td>
             <td>{props.grant.Program}</td>
             <td>{props.grant.PrimaryDiscipline}</td>
             <td>
-                <ParticipantList Participants={props.grant.Participant}/>
+                {Participant(props.grant)}
             </td>
+            <td>{props.grant.ParticipantCount}</td>
             <td>{props.grant.OrganizationType}</td>
             <td>{props.grant.Institution}</td>
             <td>{props.grant.InstState}</td>
@@ -21,3 +32,4 @@ function TableRow(props)
 }
 
 export default TableRow
+
