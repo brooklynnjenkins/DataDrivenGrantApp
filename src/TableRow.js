@@ -13,9 +13,12 @@ function TableRow(props)
             return<p>{grant.Participant.Firstname} {grant.Participant.Lastname}</p>
         }
     }
+    function showDesc(){
+    alert()
+}
     return( <>
         <tr>
-            <td>{props.grant.ProjectTitle}</td>
+            <td onClick = {showDesc}>{props.grant.ProjectTitle}</td>
             <td>{props.grant.Program}</td>
             <td>{props.grant.PrimaryDiscipline}</td>
             <td>

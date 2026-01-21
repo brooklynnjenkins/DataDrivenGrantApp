@@ -1,26 +1,72 @@
 import TableRow from './TableRow.js'
 import "./Table.css";
 import { useEffect, useState } from "react";
-
+//props=setGrantsCopy, grants, setGrants, grantsCopy
 function Table(props)
 {
     const [index, setIndex] = useState(0);
     function discOrd(){
         if(index%2==0){
-            props.setGrantsCopy(props.grantsCopy.sort((a,b) => a.PrimaryDiscipline.localeCompare(b.PrimaryDiscipline)));
+            let copy = [...props.grants];
+            copy.sort((a,b) => a.PrimaryDiscipline.localeCompare(b.PrimaryDiscipline));
             setIndex(index + 1);
+            props.setGrantsCopy(copy)
         }
         else{
-            props.setGrantsCopy(props.grantsCopy.sort((a,b) => b.PrimaryDiscipline.localeCompare(a.PrimaryDiscipline)));
+            let copy = [...props.grants];
+            copy.sort((a,b) => b.PrimaryDiscipline.localeCompare(a.PrimaryDiscipline));
             setIndex(index + 1);
+            props.setGrantsCopy(copy)
             }   
+}
+function projOrd(){
+        if(index%2==0){
+            let copy = [...props.grants];
+            copy.sort((a,b) => a.ProjectTitle.localeCompare(b.ProjectTitle));
+            setIndex(index+1);
+            props.setGrantsCopy(copy)
+        }
+        else{
+            let copy = [...props.grants];
+            copy.sort((a,b) => b.ProjectTitle.localeCompare(a.ProjectTitle));
+            setIndex(index+1);
+            props.setGrantsCopy(copy)
+        }
+}
+function yearOrd(){
+        if(index%2==0){
+            let copy = [...props.grants];
+            copy.sort((a,b) => a.YearAwarded - b.YearAwarded)
+            setIndex(index+1);
+            props.setGrantsCopy(copy)
+        }
+        else{
+            let copy = [...props.grants];
+            copy.sort((a,b) => b.YearAwarded - a.YearAwarded)
+            setIndex(index+1);
+            props.setGrantsCopy(copy)
+        }
+}
+function amtOrd(){
+        if(index%2==0){
+            let copy = [...props.grants];
+            copy.sort((a,b) => a.OriginalAmount - b.OriginalAmount)
+            setIndex(index+1);
+            props.setGrantsCopy(copy)
+        }
+        else{
+            let copy = [...props.grants];
+            copy.sort((a,b) => b.OriginalAmount - a.OriginalAmount)
+            setIndex(index+1);
+            props.setGrantsCopy(copy)
+        }
 }
     return(
         <table>
             <thead>
                 <tr>
-                    <th>
-                        Project Title 
+                    <th onClick = {projOrd} >
+                        Project Title ▲▼
                     </th>
                     <th>
                         Program
@@ -37,11 +83,11 @@ function Table(props)
                     <th>
                         State
                     </th>
-                    <th>
-                        Year Awarded
+                    <th onClick = {yearOrd}>
+                        Year Awarded ▲▼
                     </th>
-                    <th>
-                        Original Amount
+                    <th onClick = {amtOrd}>
+                        Original Amount ▲▼
                     </th>
                     <th>
                         Begin Grant Date
