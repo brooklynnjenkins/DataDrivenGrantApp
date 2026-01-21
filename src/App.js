@@ -81,7 +81,7 @@ function displayVal(){
               </select>
             </p>
             <p>
-              <input type="text" id="disciplineSearch"/>
+              <input type="text" id="disciplineSearch" placeholder="Enter Discipline..."/>
               <button onClick = {displayVal}>Enter</button>
             </p>
             <p>
