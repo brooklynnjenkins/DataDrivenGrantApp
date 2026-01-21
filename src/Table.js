@@ -89,6 +89,20 @@ function stateOrd(){
             props.setGrantsCopy(copy)
         }
 }
+function progOrd(){
+        if(index%2==0){
+            let copy = [...props.grants];
+            copy.sort((a,b) => a.Program.localeCompare(b.Program));
+            setIndex(index+1);
+            props.setGrantsCopy(copy)
+        }
+        else{
+            let copy = [...props.grants];
+            copy.sort((a,b) => b.Program.localeCompare(a.Program));
+            setIndex(index+1);
+            props.setGrantsCopy(copy)
+        }
+}
     return(
         <table>
             <thead>
@@ -96,8 +110,8 @@ function stateOrd(){
                     <th onClick = {projOrd} >
                         Project Title ▲▼
                     </th>
-                    <th>
-                        Program
+                    <th onClick = {progOrd}>
+                        Program ▲▼
                     </th>
                     <th onClick = {discOrd}>
                         Primary Discipline ▲▼

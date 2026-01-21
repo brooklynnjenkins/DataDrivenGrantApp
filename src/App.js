@@ -34,6 +34,32 @@ function regions(){
     let regionFilt = grants.filter(grant => grant.InstState.includes("KY") || grant.InstState.includes("IN") || grant.InstState.includes("TN") || grant.InstState.includes("OH") || grant.InstState.includes("MO") || grant.InstState.includes("VA") || grant.InstState.includes("WV"))
     setGrantsCopy(regionFilt)
 }
+function programChange(event){
+  const value = event.target.value;
+    if(value == "faculty"){
+      let fac = grants.filter(grant => grant.Program.includes("Faculty"));
+      setGrantsCopy(fac)
+    }
+    else if(value == "fellowship"){
+      let fel = grants.filter(grant => grant.Program.includes("Fellowships"));
+      setGrantsCopy(fel)
+    }
+    else if(value == "infras"){
+      let infr = grants.filter(grant => grant.Program.includes("Infrastructure"));
+      setGrantsCopy(infr)
+    }
+    else if(value == "stateHum"){
+      let state = grants.filter(grant => grant.Program.includes("State Humanities"));
+      setGrantsCopy(state)
+    }
+}
+function displayVal(){
+  const searchInput = document.getElementById('disciplineSearch');
+  const value = searchInput.value.toLowerCase();
+  let copy = [...grants];
+  copy = copy.filter(grant => grant.PrimaryDiscipline.toLowerCase().includes(value));
+  setGrantsCopy(copy);
+}
   return ( <>
     <div className="App">
         <div>
@@ -41,6 +67,22 @@ function regions(){
             <p>
              <button onClick = {KY}>KY</button>
              <button onClick = {regions}>Regional</button>
+            </p>
+            <p>
+              <label htmlFor="program">
+                Select Program
+              </label>
+              <select id="program" name="program"
+                 onChange={programChange}>
+                  <option value="faculty">Awards for Faculty</option>
+                  <option value="fellowship">Fellowships</option>
+                  <option value="infras">Infrastructure and Capacity Building Challenge Grants</option>
+                  <option value="stateHum">State Humanities Councils General Operating Support Grants</option>
+              </select>
+            </p>
+            <p>
+              <input type="text" id="disciplineSearch"/>
+              <button onClick = {displayVal}>Enter</button>
             </p>
             <p>
               <button onClick = {pressReset}>Reset</button> 
