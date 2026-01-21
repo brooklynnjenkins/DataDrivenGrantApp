@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
 table *{
     font-family: 'Times New Roman', Times, serif;
 }
@@ -7,19 +7,19 @@ tbody{
     color: rgb(0, 10, 24);
 }
 th{
-    background-color:rgb(221, 235, 195);
+    background-color:rgb(222, 240, 185);
     color: rgb(0, 17, 39);
     position: sticky;
     top: 0px;
 }
 
 tr:nth-child(even){
-    background-color: rgb(228, 228, 228);
+    background-color: rgb(255, 250, 218);
+    color: rgb(0, 0, 0);
 }
 th,td{
     text-align: left;
     padding: 15px;
-   ;
 }
 div{
     color: rgb(0, 0, 0);
@@ -34,5 +34,12 @@ button{
 }
 table{
     width: 100%;
-    background-color: rgb(124, 141, 92);
+    background-color: rgb(155, 160, 115);
+}
+h1{
+    font-family: 'Sour Gummy';
+    font-size: 50px;
+}
+tr:hover{
+    background-color: rgb(232, 240, 255);
 }

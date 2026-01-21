@@ -61,6 +61,34 @@ function amtOrd(){
             props.setGrantsCopy(copy)
         }
 }
+function instOrd(){
+        if(index%2==0){
+            let copy = [...props.grants];
+            copy.sort((a,b) => a.Institution.localeCompare(b.Institution));
+            setIndex(index+1);
+            props.setGrantsCopy(copy)
+        }
+        else{
+            let copy = [...props.grants];
+            copy.sort((a,b) => b.Institution.localeCompare(a.Institution));
+            setIndex(index+1);
+            props.setGrantsCopy(copy)
+        }
+}
+function stateOrd(){
+        if(index%2==0){
+            let copy = [...props.grants];
+            copy.sort((a,b) => a.InstState.localeCompare(b.InstState));
+            setIndex(index+1);
+            props.setGrantsCopy(copy)
+        }
+        else{
+            let copy = [...props.grants];
+            copy.sort((a,b) => b.InstState.localeCompare(a.InstState));
+            setIndex(index+1);
+            props.setGrantsCopy(copy)
+        }
+}
     return(
         <table>
             <thead>
@@ -77,11 +105,11 @@ function amtOrd(){
                     <th>
                         Participant(s)
                     </th>
-                    <th>
-                        Institution
+                    <th onClick = {instOrd}>
+                        Institution ▲▼
                     </th>
-                    <th>
-                        State
+                    <th onClick = {stateOrd}>
+                        State ▲▼
                     </th>
                     <th onClick = {yearOrd}>
                         Year Awarded ▲▼
