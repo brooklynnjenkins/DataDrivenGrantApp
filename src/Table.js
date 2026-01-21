@@ -4,8 +4,6 @@ import { useEffect, useState } from "react";
 
 function Table(props)
 {
-    const [grants, setGrants] = useState([{}]);
-    const [grantsCopy, setGrantsCopy] = useState(grants);
     const [index, setIndex] = useState(0);
     function discOrd(){
         if(index%2==0){
@@ -34,9 +32,6 @@ function Table(props)
                         Participant(s)
                     </th>
                     <th>
-                        Organization Type 
-                    </th>
-                    <th>
                         Institution
                     </th>
                     <th>
@@ -44,6 +39,15 @@ function Table(props)
                     </th>
                     <th>
                         Year Awarded
+                    </th>
+                    <th>
+                        Original Amount
+                    </th>
+                    <th>
+                        Begin Grant Date
+                    </th>
+                    <th>
+                        End Grant Date
                     </th>
                 </tr>
             </thead>

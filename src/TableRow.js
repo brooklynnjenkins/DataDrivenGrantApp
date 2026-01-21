@@ -21,10 +21,12 @@ function TableRow(props)
             <td>
                 {Participant(props.grant)}
             </td>
-            <td>{props.grant.OrganizationType}</td>
             <td>{props.grant.Institution}</td>
             <td>{props.grant.InstState}</td>
             <td>{props.grant.YearAwarded}</td>
+            <td>{props.grant.OriginalAmount}</td>
+            <td>{props.grant.BeginGrant}</td>
+            <td>{props.grant.EndGrant}</td>
         </tr>
     </>
     )

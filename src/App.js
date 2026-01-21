@@ -54,6 +54,16 @@ function desOrd(){
   copy.sort((a,b) => b.ProjectTitle.localeCompare(a.ProjectTitle));
   setGrantsCopy(copy)
 }
+function amtIncr(){
+    let copy = [...grants];
+    copy.sort((a,b) => a.OriginalAmount - b.OriginalAmount)
+    setGrantsCopy(copy)
+}
+function amtDesc(){
+    let copy = [...grants];
+    copy.sort((a,b) => b.OriginalAmount - a.OriginalAmount)
+    setGrantsCopy(copy)
+}
   return ( <>
     <div className="App">
         <div>
@@ -65,6 +75,8 @@ function desOrd(){
              <button onClick = {regions}>Regional</button>
              <button onClick = {ascYears}>Ascending Years</button>
              <button onClick = {desYears}>Descending Years</button>
+             <button onClick = {amtIncr}>Increasing Amount</button>
+             <button onClick = {amtDesc}>Descreasing Amount</button>
             </p>
             <p>
               <button onClick = {pressReset}>Reset</button> 
